@@ -201,50 +201,49 @@ function SpeakersAndTalks() {
               <br />
               &amp; Talks
             </h2>
-            <div className={styles.speakersTextAndAction}>
-              <p className={styles.speakersText}>
-                Our conference spans three main tracks — Ethereum Core, Network
-                Economies, and Future Society — covering everything from protocol
-                development, privacy, and onchain finance to governance, culture,
-                and long- term societal impact.
-              </p>
-              <div className={styles.speakersActionLinks}>
-                <Button href={`${ETH_PRAGUE}/speakers#tracks`} kind="dark">
-                  TRACKS
-                </Button>
-              </div>
-            </div>
+            <p className={styles.speakersText}>
+              Our conference spans three main tracks — Ethereum Core, Network
+              Economies, and Future Society — covering everything from protocol
+              development, privacy, and onchain finance to governance, culture,
+              and long- term societal impact.
+            </p>
           </div>
 
           <div className={styles.speakersSide}>
-            <div className={styles.speakersGrid}>
-              {speakers.map((speaker) => (
-                <article className={styles.speaker} key={speaker.name}>
-                  <a
-                    className={`${styles.speakerSocial} ${styles[speaker.profileType]}`}
-                    href={speaker.profile}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={speaker.profileLabel}
-                  />
-                  <div className={styles.speakerImageWrapper}>
-                    <img
-                      className={styles.speakerImage}
-                      src={`${ETH_PRAGUE}${speaker.image}`}
-                      alt={`${speaker.name}, speaker at ETHPrague 2026`}
-                      loading="lazy"
-                      decoding="async"
+            <div className={styles.speakersPreview} inert aria-hidden="true">
+              <div className={styles.speakersGrid}>
+                {speakers.map((speaker) => (
+                  <article className={styles.speaker} key={speaker.name}>
+                    <a
+                      className={`${styles.speakerSocial} ${styles[speaker.profileType]}`}
+                      href={speaker.profile}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={speaker.profileLabel}
                     />
-                  </div>
-                  <div className={styles.speakerName}>{speaker.name}</div>
-                  <div className={styles.speakerCompany}>{speaker.company}</div>
-                </article>
-              ))}
+                    <div className={styles.speakerImageWrapper}>
+                      <img
+                        className={styles.speakerImage}
+                        src={`${ETH_PRAGUE}${speaker.image}`}
+                        alt={`${speaker.name}, speaker at ETHPrague 2026`}
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </div>
+                    <div className={styles.speakerName}>{speaker.name}</div>
+                    <div className={styles.speakerCompany}>{speaker.company}</div>
+                  </article>
+                ))}
+              </div>
+
+              <div className={styles.speakersActions}>
+                <Button href={`${ETH_PRAGUE}/speakers`}>VIEW ALL (148)</Button>
+              </div>
             </div>
 
-            <div className={styles.speakersActions}>
-              <Button href={`${ETH_PRAGUE}/speakers`}>VIEW ALL (148)</Button>
-            </div>
+            <p className={styles.speakersComingSoon} role="status">
+              <span>Coming soon</span>
+            </p>
           </div>
         </div>
       </div>
