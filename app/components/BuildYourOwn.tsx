@@ -44,10 +44,10 @@ export default function BuildYourOwn() {
       <div className="build-own-inner">
         <div className="build-own-heading-wrap">
           <h2 className="build-own-heading">
-            <span>YOUR <span className="build-own-purple">OWN ROME</span></span>
+            <span> <span className="build-own-purple">ETHEREUM</span></span>
             <br />
             <span className="build-own-subheading">
-              <span>IN TECH, NOW IN CALCUTTA</span>
+              <span>HAS ARRIVED AT KOLKATA</span>
             </span>
           </h2>
         </div>

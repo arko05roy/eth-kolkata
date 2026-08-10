@@ -1,0 +1,595 @@
+@font-face {
+  font-family: "EP Graphik Semibold";
+  src: url("https://ethprague.com/_nuxt/GraphikSemibold.B20I5QjQ.otf") format("opentype");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "EP Graphik";
+  src: url("https://ethprague.com/_nuxt/GraphikRegular.WgGeNo8p.otf") format("opentype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+.root {
+  --ep-bg-ivory: #faf8f1;
+  --ep-bg-green: var(--brand-purple);
+  --ep-text-ivory: #e9dfbb;
+  --ep-text-green: #90b1ac;
+  --ep-section-content-padding-left: 1.25rem;
+  --ep-section-padding-mobile: 60px 1.5rem;
+
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  color: #000;
+  font-family: "EP Graphik Semibold", Arial, sans-serif;
+  font-weight: 400;
+}
+
+.root :where(h2, h3, p) {
+  padding: 0;
+}
+
+.root > :not(.leftArt) {
+  position: relative;
+  z-index: 1;
+}
+
+.leftArt {
+  display: none;
+  position: absolute;
+  z-index: 2;
+  top: clamp(560px, 50vw, 1250px);
+  left: clamp(-120px, -17vw, -91px);
+  width: clamp(350px, 34vw, 750px);
+  height: auto;
+  max-width: none;
+  pointer-events: none;
+}
+
+.threeDays {
+  display: flex;
+  flex-direction: column;
+  min-height: 500px;
+  width: 100%;
+  border-top: 1px solid #000;
+}
+
+.threeDaysContent {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  padding: var(--ep-section-padding-mobile);
+  background: var(--ep-bg-green);
+}
+
+.threeDaysInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 480px;
+}
+
+.threeDaysSubtitle {
+  margin: 0;
+  color: var(--ep-text-ivory);
+  font-size: clamp(20px, 1.8vw, 40px);
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.threeDaysDivider {
+  width: 80px;
+  height: 1px;
+  background: #000;
+}
+
+.threeDaysHeading {
+  margin: 0;
+  color: var(--ep-text-ivory);
+  font-size: clamp(40px, 5.4vw, 80px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: normal;
+}
+
+.threeDaysDescription {
+  margin: 0;
+  color: var(--ep-text-ivory);
+  font-size: clamp(14px, 3.8vw, 17px);
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.threeDaysButtons {
+  display: flex;
+  gap: 1rem;
+}
+
+.threeDaysImage {
+  flex: 1;
+  min-width: 50%;
+  min-height: 250px;
+  overflow: hidden;
+}
+
+.threeDaysImageElement {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+}
+
+.button {
+  display: inline-flex;
+  box-sizing: border-box;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #000;
+  color: #000;
+  font-family: "EP Graphik Semibold", Arial, sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.25s ease, opacity 0.25s ease;
+}
+
+.medium {
+  height: 45px;
+  padding: 8px 28px;
+  font-size: clamp(16px, 4vw, 18px);
+  font-weight: 500;
+}
+
+.small {
+  padding: 0.6rem 1.5rem;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.compact {
+  width: 100px;
+  height: 40px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.outlined {
+  background: var(--ep-text-ivory);
+}
+
+.outlined:hover,
+.outlined:focus-visible {
+  background: #f0e6c6;
+}
+
+.dark {
+  background: var(--ep-bg-green);
+  color: var(--ep-text-green);
+}
+
+.dark:hover,
+.dark:focus-visible {
+  opacity: 0.85;
+}
+
+.artInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  min-height: auto;
+  overflow: hidden;
+  background: var(--ep-bg-green);
+}
+
+.artInfoSpacer {
+  display: none;
+}
+
+.artInfoCards {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 3rem;
+  padding: var(--ep-section-padding-mobile);
+}
+
+.artInfoCard {
+  display: flex;
+  max-width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  margin: 0;
+  padding-left: 0.5rem;
+  border-left: 1px solid #000;
+}
+
+.artInfoCardHeader {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.artInfoCardTitle {
+  margin: 0;
+  color: var(--ep-text-ivory);
+  font-size: clamp(18px, 4.5vw, 24px);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: normal;
+  text-transform: uppercase;
+}
+
+.artInfoCardText {
+  margin: 0;
+  color: var(--ep-text-ivory);
+  font-size: clamp(14px, 3.6vw, 16px);
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.speakersSection {
+  display: flex;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  background: var(--ep-bg-ivory);
+}
+
+.speakersSpacer {
+  display: none;
+}
+
+.speakersInner {
+  max-width: 900px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: var(--ep-section-padding-mobile);
+}
+
+.speakersLayout {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.speakersMeta {
+  padding-top: 0.25rem;
+}
+
+.speakersTitle {
+  margin: 0 0 1rem;
+  color: #000;
+  font-size: clamp(36px, 5.4vw, 58px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: normal;
+}
+
+.speakersTextAndAction {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.speakersText {
+  max-width: 429px;
+  margin: 0;
+  color: #000;
+  font-size: clamp(14px, 3.8vw, 17px);
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.speakersActionLinks {
+  display: flex;
+  flex-shrink: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin: 0 0 1.5rem;
+}
+
+.speakersActionLinks .button {
+  white-space: nowrap;
+}
+
+.speakersSide {
+  width: 100%;
+  justify-self: stretch;
+}
+
+.speakersGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  justify-items: center;
+  gap: 16px 12px;
+  margin: 1.5rem 0;
+}
+
+.speaker {
+  position: relative;
+  width: 100%;
+  max-width: 210px;
+  text-align: center;
+}
+
+.speakerImageWrapper {
+  display: inline-block;
+  position: relative;
+  width: 110px;
+  height: 110px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.speakerImage {
+  width: 110px;
+  height: 110px;
+  margin: 0 auto 6px;
+  border: 1px solid #000;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.speakerName {
+  color: #000;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.speakerCompany {
+  max-width: 500px;
+  margin-top: 3px;
+  color: #000;
+  font-family: "EP Graphik", Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.25;
+  text-align: center;
+}
+
+.speakerSocial {
+  position: absolute;
+  left: 50%;
+  z-index: 10;
+  display: grid;
+  width: 110px;
+  height: 110px;
+  place-items: center;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--ep-text-ivory);
+  opacity: 0;
+  transform: translateX(-50%);
+  transition: all 0.35s ease;
+}
+
+.speakerSocial::after {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.twitter::after {
+  content: "X";
+}
+
+.linkedin::after {
+  content: "in";
+  font-size: 14px;
+}
+
+.info::after {
+  content: "i";
+}
+
+.speaker:hover .speakerSocial,
+.speakerSocial:focus,
+.speakerSocial:focus-visible,
+.speakerSocial:hover {
+  background: rgb(248 232 198 / 25%);
+  opacity: 1;
+}
+
+.speakersActions {
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 540px) {
+  .speakerImage,
+  .speakerImageWrapper,
+  .speakerSocial {
+    width: 120px;
+    height: 120px;
+  }
+
+  .speakerName {
+    font-size: 23px;
+    line-height: 20px;
+  }
+
+  .speakerCompany {
+    font-size: 16px;
+    line-height: 17px;
+  }
+}
+
+@media (min-width: 768px) {
+  .root {
+    --ep-section-content-padding-left: clamp(1.25rem, 8vw, 260px);
+  }
+
+  .threeDaysContent {
+    padding: clamp(2rem, 10vw, 220px) var(--ep-section-content-padding-left);
+  }
+
+  .threeDaysInfo {
+    gap: 32px;
+  }
+
+  .threeDaysDivider {
+    width: 138px;
+  }
+
+  .threeDaysDescription,
+  .speakersText {
+    font-size: clamp(16px, 1.5vw, 20px);
+  }
+
+  .medium {
+    padding: 10px 40px;
+    font-size: 20px;
+  }
+
+  .small {
+    padding: 0.7rem 2rem;
+    font-size: 14px;
+  }
+
+  .compact {
+    width: 121px;
+    height: 45px;
+    font-size: 20px;
+  }
+
+  .artInfoCards {
+    flex-direction: row;
+    gap: 5rem;
+    padding: clamp(1.75rem, 7vw, 125px) clamp(1.5rem, 4vw, 3rem);
+  }
+
+  .artInfoCard {
+    max-width: 370px;
+    padding-left: 2rem;
+  }
+
+  .artInfoCardTitle {
+    font-size: clamp(20px, 2vw, 40px);
+  }
+
+  .artInfoCardText {
+    font-size: clamp(15px, 1.4vw, 20px);
+  }
+
+  .speakersInner {
+    padding: 120px 60px;
+  }
+
+  .speakersTitle {
+    margin-bottom: 1.25rem;
+  }
+
+  .speakersTextAndAction {
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  .speakersSide {
+    width: 100%;
+    justify-self: flex-end;
+  }
+
+  .speakersGrid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 32px 5px;
+    margin: 60px 0;
+  }
+
+  .speakerImage,
+  .speakerImageWrapper,
+  .speakerSocial {
+    width: 110px;
+    height: 110px;
+  }
+
+  .speakerImage {
+    margin-bottom: 10px;
+  }
+
+  .speakerName {
+    font-size: 18px;
+    line-height: 18px;
+  }
+
+  .speakerCompany {
+    margin-top: 5px;
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+@media (min-width: 1120px) {
+  .leftArt {
+    display: block;
+  }
+
+  .threeDays {
+    flex-direction: row;
+  }
+
+  .threeDaysImage {
+    min-height: 300px;
+    border-left: 1px solid #000;
+  }
+
+  .artInfo {
+    min-height: 220px;
+    flex-direction: row;
+  }
+
+  .artInfoSpacer {
+    display: block;
+    flex: 0 0 45%;
+  }
+
+  .speakersInner {
+    margin-right: 0;
+  }
+}
+
+@media (min-width: 1800px) {
+  .leftArt {
+    top: clamp(560px, 50vw, 1250px);
+    left: clamp(-120px, -17vw, -91px);
+    width: clamp(452px, 32vw, 700px);
+  }
+
+  .speakersSpacer {
+    display: block;
+    width: clamp(452px, 32vw, 700px);
+    height: 100%;
+  }
+}
+
+@media (min-width: 1900px) {
+  .speakersInner {
+    margin: auto;
+    padding: clamp(2rem, 10vw, 120px) 0;
+  }
+}

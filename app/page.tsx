@@ -2,7 +2,9 @@
 
 import kolkata from "../brand/kolkata.png";
 import BuildYourOwn from "./components/BuildYourOwn";
-import EthIstanbulBelow from "./components/EthIstanbulBelow";
+import EthPragueLower from "./components/ethprague/EthPragueLower";
+import EthPragueSponsors from "./components/ethprague/EthPragueSponsors";
+import EthPragueUpper from "./components/ethprague/EthPragueUpper";
 import Navbar from "./components/Navbar";
 
 export default function Home() {
@@ -30,7 +32,6 @@ export default function Home() {
 
       <main id="top">
         <section className="hero-section">
-          <Navbar />
           <div className="hero-sky" />
           <img className="hero-kolkata" src={kolkata.src} alt="Illustrated Kolkata skyline" />
           <div className="hero-content">
@@ -40,8 +41,12 @@ export default function Home() {
           </div>
         </section>
 
+        <Navbar />
+
         <BuildYourOwn />
-        <EthIstanbulBelow />
+        <EthPragueUpper />
+        <EthPragueSponsors />
+        <EthPragueLower />
       </main>
     </div>
   );
