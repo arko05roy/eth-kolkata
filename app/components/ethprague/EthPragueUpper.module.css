@@ -45,11 +45,11 @@
   z-index: 2;
   top: clamp(560px, 50vw, 1250px);
   left: clamp(-120px, -17vw, -91px);
-  width: clamp(350px, 34vw, 750px);
+  width: clamp(300px, 27vw, 600px);
   height: auto;
   max-width: none;
   pointer-events: none;
-  transform: translate(118px, 40px);
+  transform: translate(118px, 15px);
 }
 
 .threeDays {
@@ -242,6 +242,46 @@
   color: var(--ep-text-ivory);
   font-size: clamp(14px, 3.6vw, 16px);
   font-weight: 600;
+  line-height: 1.25;
+}
+
+.manifestoSection {
+  display: flex;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  background: var(--ep-bg-ivory);
+}
+
+.manifestoSpacer {
+  display: none;
+}
+
+.manifestoInner {
+  max-width: 900px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: var(--ep-section-padding-mobile);
+}
+
+.manifestoTitle {
+  margin: 0 0 1rem;
+  color: #000;
+  font-size: clamp(36px, 5.4vw, 58px);
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.manifestoCopy {
+  display: grid;
+  gap: 1rem;
+  max-width: 720px;
+}
+
+.manifestoCopy p {
+  margin: 0;
+  color: #000;
+  font-size: clamp(14px, 3.8vw, 17px);
+  font-weight: 400;
   line-height: 1.25;
 }
 
@@ -517,8 +557,20 @@
     font-size: clamp(15px, 1.4vw, 20px);
   }
 
+  .manifestoInner {
+    padding: 120px 60px 0;
+  }
+
+  .manifestoTitle {
+    margin-bottom: 1.25rem;
+  }
+
+  .manifestoCopy p {
+    font-size: clamp(16px, 1.5vw, 20px);
+  }
+
   .speakersInner {
-    padding: 120px 60px;
+    padding: 120px 60px 0;
   }
 
   .speakersTitle {
@@ -560,6 +612,10 @@
 }
 
 @media (min-width: 1120px) {
+  .manifestoSection {
+    padding-bottom: clamp(180px, 15vw, 280px);
+  }
+
   .leftArt {
     display: block;
   }
@@ -583,6 +639,15 @@
     flex: 0 0 45%;
   }
 
+  .manifestoSpacer {
+    display: block;
+    flex: 0 0 45%;
+  }
+
+  .manifestoInner {
+    margin-right: 0;
+  }
+
   .speakersInner {
     margin-right: 0;
   }
@@ -592,7 +657,16 @@
   .leftArt {
     top: clamp(560px, 50vw, 1250px);
     left: clamp(-120px, -17vw, -91px);
-    width: clamp(452px, 32vw, 700px);
+    width: clamp(390px, 27vw, 600px);
+  }
+
+  .manifestoSpacer {
+    flex: 0 0 clamp(452px, 32vw, 700px);
+  }
+
+  .manifestoInner {
+    margin: auto;
+    padding: clamp(2rem, 10vw, 120px) 0 0;
   }
 
   .speakersSpacer {

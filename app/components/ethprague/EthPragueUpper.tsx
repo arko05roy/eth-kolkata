@@ -6,83 +6,6 @@ import styles from "./EthPragueUpper.module.css";
 
 const ETH_PRAGUE = "https://ethprague.com";
 
-type Speaker = {
-  name: string;
-  company: string;
-  image: string;
-  profile: string;
-  profileLabel: string;
-  profileType: "twitter" | "linkedin" | "info";
-};
-
-const speakers: Speaker[] = [
-  {
-    name: "Vitalik Buterin",
-    company: "Ethereum Foundation",
-    image: "/people-and-sponsors/2026-vitalik-buterin-1936c49972.jpg",
-    profile: "https://twitter.com/VitalikButerin",
-    profileLabel: "Vitalik Buterin's Twitter",
-    profileType: "twitter",
-  },
-  {
-    name: "Marian Goodell",
-    company: "Burning Man Project",
-    image: "/people-and-sponsors/2026-marian-goodell-2bdada18d6.jpg",
-    profile: "https://www.linkedin.com/in/mariangoodell",
-    profileLabel: "Marian Goodell's LinkedIn",
-    profileType: "linkedin",
-  },
-  {
-    name: "Micah Springut",
-    company: "Monumental Labs",
-    image: "/people-and-sponsors/2026-micah-springut-bc188aae08.jpg",
-    profile: "https://www.monumentallabs.co/",
-    profileLabel: "Micah Springut's website",
-    profileType: "info",
-  },
-  {
-    name: "Peter Szilagyi",
-    company: "Dark Bio",
-    image: "/people-and-sponsors/2026-peter-szilagyi-549278feeb.jpg",
-    profile: "https://x.com/peter_szilagyi",
-    profileLabel: "Peter Szilagyi's Twitter",
-    profileType: "twitter",
-  },
-  {
-    name: "Christopher Fabian",
-    company: "Giga, UNICEF",
-    image: "/people-and-sponsors/2026-christopher-fabian-f6136626f7.jpg",
-    profile: "https://www.linkedin.com/in/hichrisfabian/?originalSubdomain=ch",
-    profileLabel: "Christopher Fabian's LinkedIn",
-    profileType: "linkedin",
-  },
-  {
-    name: "Balaji",
-    company: "Network School",
-    image: "/people-and-sponsors/2026-balaji-506e0aefb2.jpg",
-    profile: "https://x.com/balajis",
-    profileLabel: "Balaji's Twitter",
-    profileType: "twitter",
-  },
-  {
-    name: "Ondrej Kovarik",
-    company: "Former member of European Parliament",
-    image: "/people-and-sponsors/2026-ondrej-kovarik-acc52def3a.jpg",
-    profile:
-      "https://www.europarl.europa.eu/meps/cs/118949/ONDREJ_KOVARIK/declarations",
-    profileLabel: "Ondrej Kovarik's website",
-    profileType: "info",
-  },
-  {
-    name: "Josef Jelacic",
-    company: "OWN",
-    image: "/people-and-sponsors/2026-josef-jelacic-af674c47dc.jpg",
-    profile: "https://x.com/josefj_",
-    profileLabel: "Josef Jelacic's Twitter",
-    profileType: "twitter",
-  },
-];
-
 function Button({
   children,
   href,
@@ -125,8 +48,7 @@ function ThreeDays() {
           </h2>
           <p className={styles.threeDaysDescription}>
             ETHKolkata 2026 brings builders, researchers, and designers together
-            for talks, workshops, and hands-on hacking focused on moving Ethereum
-            forward.
+            as a community focused on moving Ethereum forward to the future.
           </p>
           <div className={styles.threeDaysButtons}>
             <Button href={`${ETH_PRAGUE}/faq`} size="compact">
@@ -155,9 +77,9 @@ function ArtInfo() {
         <article className={styles.artInfoCard}>
           <div className={styles.artInfoCardHeader}>
             <h3 className={styles.artInfoCardTitle}>
-              KOLKATA
+              ডাকছে
               <br />
-              CALLING
+              KOLKATA
             </h3>
             <Button
               href="https://www.google.com/maps/search/?api=1&query=Kolkata%2C%20India"
@@ -176,9 +98,9 @@ function ArtInfo() {
 
         <article className={styles.artInfoCard}>
           <h3 className={styles.artInfoCardTitle}>
-            KOLKATA
+            THE 
             <br />
-            EXPERIENCE
+            CITY OF JOY
           </h3>
           <p className={styles.artInfoCardText}>
             Collaborate with builders, solve real problems, launch pilots, and
@@ -190,62 +112,26 @@ function ArtInfo() {
   );
 }
 
-function SpeakersAndTalks() {
+function Manifesto() {
   return (
-    <section className={styles.speakersSection}>
-      <div className={styles.speakersSpacer} aria-hidden="true" />
-      <div className={styles.speakersInner}>
-        <div className={styles.speakersLayout}>
-          <div className={styles.speakersMeta}>
-            <h2 className={styles.speakersTitle}>
-              Speakers
-              <br />
-              &amp; Talks
-            </h2>
-            <p className={styles.speakersText}>
-              Our conference spans three main tracks — Ethereum Core, Network
-              Economies, and Future Society — covering everything from protocol
-              development, privacy, and onchain finance to governance, culture,
-              and long- term societal impact.
-            </p>
-          </div>
-
-          <div className={styles.speakersSide}>
-            <div className={styles.speakersPreview} inert aria-hidden="true">
-              <div className={styles.speakersGrid}>
-                {speakers.map((speaker) => (
-                  <article className={styles.speaker} key={speaker.name}>
-                    <a
-                      className={`${styles.speakerSocial} ${styles[speaker.profileType]}`}
-                      href={speaker.profile}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={speaker.profileLabel}
-                    />
-                    <div className={styles.speakerImageWrapper}>
-                      <img
-                        className={styles.speakerImage}
-                        src={`${ETH_PRAGUE}${speaker.image}`}
-                        alt={`${speaker.name}, speaker at ETHPrague 2026`}
-                        loading="lazy"
-                        decoding="async"
-                      />
-                    </div>
-                    <div className={styles.speakerName}>{speaker.name}</div>
-                    <div className={styles.speakerCompany}>{speaker.company}</div>
-                  </article>
-                ))}
-              </div>
-
-              <div className={styles.speakersActions}>
-                <Button href={`${ETH_PRAGUE}/speakers`}>VIEW ALL (148)</Button>
-              </div>
-            </div>
-
-            <p className={styles.speakersComingSoon} role="status">
-              <span>Coming soon</span>
-            </p>
-          </div>
+    <section className={styles.manifestoSection}>
+      <div className={styles.manifestoSpacer} aria-hidden="true" />
+      <div className={styles.manifestoInner}>
+        <h2 className={styles.manifestoTitle}>Manifesto</h2>
+        <div className={styles.manifestoCopy}>
+          <p>
+            ETHKolkata is a community focused on the future of Ethereum and potential
+            applications that don&apos;t yet exist. We&apos;re not looking
+            for the next get rich quick scheme, but to instead leave an impact on
+            our society and technology.
+          </p>
+          <p>
+            We aim to tackle challenges that will arise in the next decade and
+            beyond because we believe Ethereum can play a major role in solving
+            important problems. The future is in your hands, anon! Whether we end
+            up living in a dark authoritarian dystopia or a bright solarpunk utopia
+            depends on what we build together.
+          </p>
         </div>
       </div>
     </section>
@@ -263,7 +149,7 @@ export default function EthPragueUpper() {
       />
       <ThreeDays />
       <ArtInfo />
-      <SpeakersAndTalks />
+      <Manifesto />
     </div>
   );
 }
