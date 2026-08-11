@@ -2,8 +2,6 @@
 
 /* eslint-disable @next/next/no-img-element */
 
-import maximalisedBus from "../../brand/maximalisedbus.png";
-
 const topics = [
   "Edge Proofs",
   "DeFi",
@@ -54,7 +52,10 @@ export default function BuildYourOwn() {
 
         <div className="build-own-program">
           <div className="build-own-image-card">
-            <img src={maximalisedBus.src} alt="Colorful Kolkata city bus" />
+            <img
+              src="https://ethistanbul.io/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fconference_image.3928e874.webp&w=1200&q=75"
+              alt="ETHIstanbul conference"
+            />
           </div>
 
           <div className="build-own-copy">

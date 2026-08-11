@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 
+import girl from "../../../brand/girl.png";
 import ccu from "../../../brand/ccu.jpg";
 import styles from "./EthPragueUpper.module.css";
 
@@ -118,9 +119,9 @@ function ThreeDays() {
           </p>
           <div className={styles.threeDaysDivider} />
           <h2 className={styles.threeDaysHeading}>
-            Built
+            The
             <br />
-            for Impact
+            Kolkata State Of Mind
           </h2>
           <p className={styles.threeDaysDescription}>
             ETHKolkata 2026 brings builders, researchers, and designers together
@@ -256,8 +257,8 @@ export default function EthPragueUpper() {
     <div className={styles.root}>
       <img
         className={styles.leftArt}
-        src={`${ETH_PRAGUE}/_nuxt/eth-diamond-for-left-side.Bl6oi9px.webp`}
-        alt="Ethereum diamond illustration"
+        src={girl.src}
+        alt="Illustrated woman holding an Ethereum symbol in a Kolkata-inspired artwork"
         aria-hidden="true"
       />
       <ThreeDays />
