@@ -2,9 +2,12 @@
 
 import { useEffect, useRef } from "react";
 
-const X_WIDGETS_SRC = "https://platform.x.com/widgets.js";
+const X_WIDGETS_SRC = "https://platform.twitter.com/widgets.js";
+const X_POSTS_CACHE_KEY = "ethkolkata:x-post-wall:v2";
 
-const posts = [
+// Add X post URLs here; each entry is rendered as an embedded post below.
+const xPostUrls = [
+  "https://x.com/eth_kolkata/status/2086469423200886967",
   "https://x.com/eth_kolkata/status/2088744903996260490",
   "https://x.com/eth_kolkata/status/2088565915621474323",
   "https://x.com/eth_kolkata/status/2087967800782659824",
@@ -14,6 +17,13 @@ const posts = [
   "https://x.com/eth_kolkata/status/2086729145027813425",
   "https://x.com/eth_kolkata/status/2086653638320275663",
 ];
+
+const postListSignature = xPostUrls.join("|");
+
+type CachedPostWall = {
+  signature: string;
+  html: string;
+};
 
 type XWidgets = {
   load: (element?: HTMLElement) => void;
@@ -76,11 +86,54 @@ export default function SocialFeed() {
 
   useEffect(() => {
     let isMounted = true;
+    let cacheObserver: MutationObserver | undefined;
+    let cacheTimeout: number | undefined;
+    const wall = wallRef.current;
+
+    if (!wall) {
+      return;
+    }
+
+    try {
+      const cachedWall = window.localStorage.getItem(X_POSTS_CACHE_KEY);
+      if (cachedWall) {
+        const { signature, html } = JSON.parse(cachedWall) as CachedPostWall;
+
+        if (signature === postListSignature && html) {
+          wall.innerHTML = html;
+          return;
+        }
+      }
+    } catch {
+      // X embeds still render normally when browser storage is unavailable.
+    }
 
     loadXWidgets()
       .then((widgets) => {
-        if (isMounted && wallRef.current) {
-          widgets.load(wallRef.current);
+        if (isMounted) {
+          widgets.load(wall);
+
+          const cacheRenderedWall = () => {
+            if (!wall.querySelector("iframe")) {
+              return;
+            }
+
+            try {
+              window.localStorage.setItem(
+                X_POSTS_CACHE_KEY,
+                JSON.stringify({ signature: postListSignature, html: wall.innerHTML }),
+              );
+            } catch {
+              // Rendering should not depend on storage succeeding.
+            }
+          };
+
+          cacheObserver = new MutationObserver(cacheRenderedWall);
+          cacheObserver.observe(wall, { childList: true, subtree: true });
+          cacheTimeout = window.setTimeout(() => {
+            cacheRenderedWall();
+            cacheObserver?.disconnect();
+          }, 3000);
         }
       })
       .catch(() => {
@@ -89,6 +142,10 @@ export default function SocialFeed() {
 
     return () => {
       isMounted = false;
+      cacheObserver?.disconnect();
+      if (cacheTimeout) {
+        window.clearTimeout(cacheTimeout);
+      }
     };
   }, []);
 
@@ -105,7 +162,7 @@ export default function SocialFeed() {
         </div>
 
         <div ref={wallRef} className="social-feed-wall">
-          {posts.map((postUrl) => (
+          {xPostUrls.map((postUrl) => (
             <article className="social-post-card" key={postUrl}>
               <blockquote className="twitter-tweet" data-theme="light" data-conversation="none">
                 <a href={postUrl}>View this ETHKolkata post on X</a>
