@@ -1,5 +1,5 @@
 @font-face {
-  font-family: "EthPrague Graphik Semibold";
+  font-family: "EthKolkata Graphik Semibold";
   font-style: normal;
   font-weight: 600;
   font-display: swap;
@@ -7,7 +7,7 @@
 }
 
 @font-face {
-  font-family: "EthPrague Graphik";
+  font-family: "EthKolkata Graphik";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -15,7 +15,7 @@
 }
 
 @font-face {
-  font-family: "EthPrague Graphik";
+  font-family: "EthKolkata Graphik";
   font-style: normal;
   font-weight: 700;
   font-display: swap;
@@ -30,8 +30,8 @@
   --coral-hover: #d4707a;
   --content-left: clamp(1.25rem, 8vw, 260px);
   --mobile-section-padding: 60px 1.5rem;
-  --font-primary: "EthPrague Graphik Semibold", Arial, Helvetica, sans-serif;
-  --font-regular: "EthPrague Graphik", Arial, Helvetica, sans-serif;
+  --font-primary: "EthKolkata Graphik Semibold", Arial, Helvetica, sans-serif;
+  --font-regular: "EthKolkata Graphik", Arial, Helvetica, sans-serif;
   position: relative;
   width: 100%;
   background: var(--paper);
@@ -289,9 +289,9 @@
   max-width: 1100px;
   flex-wrap: wrap;
   align-items: flex-start;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 60px;
-  margin: 1rem;
+  margin: 1rem auto;
   padding: 0 1.5rem;
 }
 
@@ -312,14 +312,14 @@
 }
 
 .footerLinks,
-.ethPragueLinks {
+.ethKolkataLinks {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
 .footerLinks a,
-.ethPragueLinks > a {
+.ethKolkataLinks > a {
   color: #fff;
   font-family: var(--font-primary);
   font-size: 16px;
@@ -379,7 +379,7 @@
   line-height: 24px;
 }
 
-.ethPragueColumn,
+.ethKolkataColumn,
 .pastEditions {
   position: relative;
 }
@@ -490,6 +490,10 @@
   text-align: center;
 }
 
+.designCredit a {
+  color: inherit;
+}
+
 .designCredit:hover {
   color: #fff !important;
   text-decoration: none !important;
@@ -565,7 +569,7 @@
   }
 
   .footerLinks a,
-  .ethPragueLinks > a,
+  .ethKolkataLinks > a,
   .pastEditionsSummary,
   .pastEditionsLinks a {
     font-size: 18px;

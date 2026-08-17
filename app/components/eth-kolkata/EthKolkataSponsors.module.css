@@ -1,5 +1,5 @@
 @font-face {
-  font-family: "EthPrague Graphik Semibold";
+  font-family: "EthKolkata Graphik Semibold";
   font-style: normal;
   font-weight: 600 800;
   font-display: swap;
@@ -7,7 +7,7 @@
 }
 
 @font-face {
-  font-family: "EthPrague Graphik";
+  font-family: "EthKolkata Graphik";
   font-style: normal;
   font-weight: 400 500;
   font-display: swap;
@@ -25,7 +25,7 @@
   padding: 60px 24px;
   background: #fff;
   color: #000;
-  font-family: "EthPrague Graphik Semibold", Arial, Helvetica, sans-serif;
+  font-family: "EthKolkata Graphik Semibold", Arial, Helvetica, sans-serif;
 }
 
 .homeSponsorsInner {
@@ -37,7 +37,7 @@
 .homeSponsorsTitle {
   margin: 0 0 20px;
   color: var(--ethp-action);
-  font-family: "EthPrague Graphik Semibold", Arial, Helvetica, sans-serif;
+  font-family: "EthKolkata Graphik Semibold", Arial, Helvetica, sans-serif;
   font-size: clamp(36px, 5.4vw, 56px);
   font-weight: 700;
   line-height: 1.1;
@@ -63,7 +63,7 @@
   border: 1px solid #000;
   color: #000;
   cursor: pointer;
-  font-family: "EthPrague Graphik Semibold", Arial, Helvetica, sans-serif;
+  font-family: "EthKolkata Graphik Semibold", Arial, Helvetica, sans-serif;
   font-size: clamp(16px, 4vw, 18px);
   font-weight: 500;
   letter-spacing: 0.06em;
@@ -120,7 +120,7 @@
 .tierTitle {
   margin: 0 0 12px;
   color: var(--ethp-action);
-  font-family: "EthPrague Graphik", Arial, Helvetica, sans-serif;
+  font-family: "EthKolkata Graphik", Arial, Helvetica, sans-serif;
   font-size: clamp(18px, 4.5vw, 24px);
   font-weight: 500;
   line-height: 1.25;

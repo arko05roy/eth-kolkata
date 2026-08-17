@@ -2,10 +2,10 @@
 
 import kolkata from "../brand/kolkata.png";
 import BuildYourOwn from "./components/BuildYourOwn";
-import EthPragueLower from "./components/ethprague/EthPragueLower";
-import EthPragueSponsors from "./components/ethprague/EthPragueSponsors";
-import EthPragueUpper from "./components/ethprague/EthPragueUpper";
+import EthKolkataLower from "./components/eth-kolkata/EthKolkataLower";
+import EthKolkataUpper from "./components/eth-kolkata/EthKolkataUpper";
 import Navbar from "./components/Navbar";
+import SocialFeed from "./components/SocialFeed";
 
 export default function Home() {
   return (
@@ -44,9 +44,9 @@ export default function Home() {
         <Navbar />
 
         <BuildYourOwn />
-        <EthPragueUpper />
-        <EthPragueSponsors />
-        <EthPragueLower />
+        <EthKolkataUpper />
+        <SocialFeed />
+        <EthKolkataLower />
       </main>
     </div>
   );

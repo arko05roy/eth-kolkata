@@ -2,9 +2,7 @@
 
 import girl from "../../../brand/girl.png";
 import ccu from "../../../brand/ccu.jpg";
-import styles from "./EthPragueUpper.module.css";
-
-const ETH_PRAGUE = "https://ethprague.com";
+import styles from "./EthKolkataUpper.module.css";
 
 function Button({
   children,
@@ -51,7 +49,7 @@ function ThreeDays() {
             as a community focused on moving Ethereum forward to the future.
           </p>
           <div className={styles.threeDaysButtons}>
-            <Button href={`${ETH_PRAGUE}/faq`} size="compact">
+            <Button href="#Contact" size="compact">
               FAQ
             </Button>
           </div>
@@ -117,20 +115,13 @@ function Manifesto() {
     <section className={styles.manifestoSection}>
       <div className={styles.manifestoSpacer} aria-hidden="true" />
       <div className={styles.manifestoInner}>
-        <h2 className={styles.manifestoTitle}>Manifesto</h2>
+        <h2 className={styles.manifestoTitle}>Get Your EthCard</h2>
         <div className={styles.manifestoCopy}>
           <p>
-            ETHKolkata is a community focused on the future of Ethereum and potential
-            applications that don&apos;t yet exist. We&apos;re not looking
-            for the next get rich quick scheme, but to instead leave an impact on
-            our society and technology.
+            Get an NFC-powered EthCard made for the ETHKolkata community.
           </p>
           <p>
-            We aim to tackle challenges that will arise in the next decade and
-            beyond because we believe Ethereum can play a major role in solving
-            important problems. The future is in your hands, anon! Whether we end
-            up living in a dark authoritarian dystopia or a bright solarpunk utopia
-            depends on what we build together.
+            Keep it close, tap in, and carry a piece of the community with you.
           </p>
         </div>
       </div>
@@ -138,7 +129,7 @@ function Manifesto() {
   );
 }
 
-export default function EthPragueUpper() {
+export default function EthKolkataUpper() {
   return (
     <div className={styles.root}>
       <img

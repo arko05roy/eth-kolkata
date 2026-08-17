@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import styles from "./EthPragueSponsors.module.css";
+import styles from "./EthKolkataSponsors.module.css";
 
 type Sponsor = {
   name: string;
@@ -251,7 +251,7 @@ const logoGridClasses: Record<Tier["size"], string> = {
   sm: styles.logosSm,
 };
 
-export default function EthPragueSponsors() {
+export default function EthKolkataSponsors() {
   return (
     <section className={styles.homeSponsors} aria-labelledby="sponsors-heading">
       <div className={styles.homeSponsorsInner}>
@@ -260,7 +260,7 @@ export default function EthPragueSponsors() {
         </h2>
 
         <div className={styles.homeSponsorsCta}>
-          <a className={`${styles.button} ${styles.buttonPrimary}`} href="mailto:sponsor@ethprague.com">
+          <a className={`${styles.button} ${styles.buttonPrimary}`} href="mailto:sponsor@ethkolkata.com">
             Contact us
           </a>
         </div>

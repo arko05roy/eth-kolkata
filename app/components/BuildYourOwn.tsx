@@ -2,39 +2,7 @@
 
 /* eslint-disable @next/next/no-img-element */
 
-const topics = [
-  "Edge Proofs",
-  "DeFi",
-  "Crypto Consumer UX",
-  "L2s",
-  "Interoperability",
-  "Public Goods",
-  "Privacy & Security",
-  "TEEs",
-  "Data Availability",
-  "Self Sovereign Identity",
-  "DevTooling",
-  "AI Agents",
-  "Zero Knowledge Proofs",
-];
-
-function TopicReel() {
-  return (
-    <div className="build-own-ticker" aria-label="ETHKolkata topics">
-      <div className="build-own-ticker-track">
-        {[0, 1].map((copy) => (
-          <div className="build-own-ticker-content" key={copy} aria-hidden={copy === 1}>
-            {topics.map((topic) => (
-              <span className="build-own-ticker-item" key={`${copy}-${topic}`}>
-                {topic}
-              </span>
-            ))}
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
+import kolkataBus from "../../brand/maximalisedbus.png";
 
 export default function BuildYourOwn() {
   return (
@@ -53,8 +21,8 @@ export default function BuildYourOwn() {
         <div className="build-own-program">
           <div className="build-own-image-card">
             <img
-              src="https://ethistanbul.io/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fconference_image.3928e874.webp&w=1200&q=75"
-              alt="ETHIstanbul conference"
+              src={kolkataBus.src}
+              alt="Decorated blue and yellow Kolkata bus"
             />
           </div>
 
@@ -83,7 +51,6 @@ export default function BuildYourOwn() {
         </div>
       </div>
 
-      <TopicReel />
     </section>
   );
 }
