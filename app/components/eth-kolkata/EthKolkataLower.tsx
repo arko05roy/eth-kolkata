@@ -60,7 +60,7 @@ export default function EthKolkataLower() {
       <section className={styles.newsletter}>
         <div className={styles.newsletterContent}>
           <div className={styles.newsletterInfo}>
-            <h2 className={styles.newsletterHeading}>Subscribe to<br />our socials</h2>
+            <h2 className={styles.newsletterHeading}>Follow<br />our socials</h2>
             <p className={styles.newsletterSubtext}>Stay up to date with the latest news!</p>
             <a
               className={`${styles.button} ${styles.primaryButton}`}
@@ -68,7 +68,7 @@ export default function EthKolkataLower() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              SUBSCRIBE
+              Follow
             </a>
           </div>
         </div>
